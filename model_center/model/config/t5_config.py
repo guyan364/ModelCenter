@@ -63,7 +63,8 @@ class T5Config(Config):
                        tied = True,
                        cls_head = None,
                        post_layer_norm = False,
-                       scale = None
+                       scale = None,
+                       mask_modules = None
                     ):
 
         super().__init__()
@@ -108,3 +109,4 @@ class T5Config(Config):
             self.dtype = torch.float
         self.cls_head = cls_head
         self.post_layer_norm = post_layer_norm
+        self.mask_modules = mask_modules

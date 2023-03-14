@@ -81,6 +81,7 @@ class T5(BaseModel):
             length_scale = config.length_scale,
             attn_scale = config.attn_scale,
             dropout_p = config.dropout_p,
+            mask_modules=config.mask_modules['encoder'] if config.mask_modules is not None else None
         )
         self.decoder = Decoder(
             num_layers = config.num_decoder_layers,
@@ -105,6 +106,7 @@ class T5(BaseModel):
             length_scale = config.length_scale,
             attn_scale = config.attn_scale,
             dropout_p = config.dropout_p,
+            mask_modules=config.mask_modules['decoder'] if config.mask_modules is not None else None
         )
         # Output Layer
         if config.cls_head:

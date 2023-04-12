@@ -449,6 +449,7 @@ class TransformerBlock(torch.nn.Module):
         self.mask_cross = mask_cross
         self.mask_ffn = mask_ffn
         self.is_decoder = is_decoder
+        self.dim_model = dim_model
 
         if not mask_att:
             self.self_att = SelfAttentionBlock(
